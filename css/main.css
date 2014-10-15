@@ -1,0 +1,184 @@
+body {
+    font-family: Lato, sans-serif;
+    /*background-color: #D7E1EE;*/
+}
+.bold {
+    font-weight: bold;
+}
+.msg-navbar {
+    background: #BBE1F9;
+    border: 0px none;
+}
+.navbar {
+    margin-bottom: 0px;
+    border: 0px none;
+}
+.msg-navbar .navbar-nav>li>a {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #616469;
+}
+
+.msg-navbar .navbar-brand,
+.msg-navbar .navbar-nav>li.active>a,
+.msg-navbar .navbar-nav>li:hover>a {
+    color: #616469; 
+}
+.msg-navbar .navbar-nav>li>a:hover {
+    background-color: #558EB9;
+    color: #FFF;
+}
+.msg-navbar .navbar-toggle .icon-bar {
+    background-color: #616469;
+}
+.msg-header {
+    position: relative;
+    padding: 5px;
+    margin-bottom: 20px;
+    background-color: #558EB9;
+    color: #FFF;
+}
+    .msg-header h1 {
+        font-weight: bold;
+    }
+    .msg-header .sub-header {
+        color: #BBE1F9; 
+        font-weight: bold;
+    }
+f.msg-body {
+    color: #555;
+}
+.msg-body h3 {
+    margin-bottom: 20px;
+    color: #585858;
+    font-size: 28px;
+    text-transform: none;
+    background: url("../images/heading-bg.png") 50% 50% repeat-x;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.msg-body h3 span {
+    background: #fff;
+    display: inline-block;
+    height: 100%;
+    padding: 0 25px;
+}
+.msg-body a {
+    color: #ff8b00;
+    text-decoration: none;
+}
+.msg-body a:hover {
+    color: #585858;
+}
+.msg-body .msg-box {
+    margin-top: 50px;
+}
+.msg-body .msg-box .icon-div {
+    background-color: #ff8b00;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    color: #FAFAFA;
+    display: inline-block;
+    padding: 30px;
+}
+.msg-body .msg-box h5.icon-head {
+    font-weight: bold;
+    color: #555;
+    margin: 20px;
+}
+.msg-body .msg-box p {
+    color: #555;
+    margin: 20px;
+}
+.msg-footer {
+    background: #2a3034;
+    padding: 50px 0;
+    margin-top: 30px;
+}
+.msg-footer p {
+    color: #fff;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 1em;
+    margin: 0;
+}
+.msg-footer p span {
+    font-weight: 400;
+    font-size: 14px;
+    color: #908f8f;
+}
+.glyphicon-2x{
+    font-size: 20px; 
+}
+.glyphicon-3x{
+    font-size: 40px; 
+}
+.glyphicon-4x{
+    font-size: 60px; 
+}
+.glyphicon-5x{
+    font-size: 80px; 
+}
+.glyphicon-6x{
+    font-size: 100px; 
+}
+.glyphicon-10x{
+    font-size: 180px; 
+}
+.btn.btn-blue {
+    color: #FFF;
+    background: #00C3F7;
+    border: 2px solid #00C3F7;
+    border-radius: 0px;
+    text-shadow: 0 0 0;
+}
+.btn.btn-orange {
+    color: #FFF;
+    background: #ff8b00;
+    border: 2px solid #ff8b00;
+    border-radius: 0px;
+    text-shadow: 0 0 0;
+}
+.contact-info {
+    margin: 0;
+    list-style: none;
+}
+.contact-info li {
+    font-size: 16px;
+    padding: 10px 0 10px 50px;
+    margin-bottom: 10px;
+}
+.form-control, input[type='text'], input[type='email'], input[type='number'], input[type='password'], textarea, select {
+    border: 1px solid #CCC;
+    border-bottom: 3px solid #CCC;
+    padding: 15px;
+    height: auto;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+}
+.form-control.error, input.error, textarea.error, select.error {
+    border-color: #FF4040;
+}
+.loading {
+    display: none;
+}
+.show-loading {
+    display: inline-block;
+}
+textarea.error:focus, input.error[type="text"]:focus, input.error[type="password"]:focus, input.error[type="datetime"]:focus, input.error[type="datetime-local"]:focus, input.error[type="date"]:focus, input.error[type="month"]:focus, input.error[type="time"]:focus, input.error[type="week"]:focus, input.error[type="number"]:focus, input.error[type="email"]:focus, input.error[type="url"]:focus, input.error[type="search"]:focus, input.error[type="tel"]:focus, input.error[type="color"]:focus, .uneditable-input.error:focus {   
+    border-color: #FF4040;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(255, 64, 64, 0.6);
+    outline: 0 none;
+}
+label.error {
+    font-weight: normal;
+    color: #FF4040;
+}
+footer {
+    border-top: 1px solid #DDD;
+    margin-top: 40px;
+    padding: 10px;
+}

@@ -1,9 +1,14 @@
 'use strict';
 
 $(document).ready(function() {
+
+    /*
+     * @summary: on page load demos 
+     */
     $('#info_msg').message({
         type: 'info',
-        html: '<strong>Oh...! </strong> it\'s an information message.'
+        html: '<strong>Oh...! </strong> it\'s an information message.',
+        close: false
     });
     $('#warning_msg').message({
         type:'warning',
@@ -11,10 +16,39 @@ $(document).ready(function() {
     });
     $('#success_msg').message({
         type: 'success',
-        html: '<strong>Well Done! </strong> You did great job.'
+        html: '<strong>Well Done! </strong> You did great job.',
+        close: false,
+        autoHide: 4000
     });
     $('#error_msg').message({
         type: 'danger',
-        html: '<strong>Damn </strong> it\'s an error'
+        html: '<strong>Damn </strong> it\'s an error',
+        close: true,
+        autoHide: 10000
     });
+
+    /*
+     * @summary: Message at particular div
+     */
+    var message1;
+    $('#success1').click(function () {
+        message1 = $('#particular_msg').message({
+            type: 'success',
+            html: 'This is message in particular div.',
+            beforeFunc: function () {
+                $('#update1').prop('disabled', false);
+            },
+            afterFunc: function () {
+                $('#close1').prop('disabled', false);
+            },
+            onCloseFunc: function () {
+                $('#update1').prop('disabled', true);
+                $('#close1').prop('disabled', true);
+            }
+        });
+    });
+    $('#close1').click(function() {
+        debugger;
+        message1.close();
+    })
 });

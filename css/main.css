@@ -18,15 +18,14 @@ body {
     font-weight: bold;
     color: #616469;
 }
-
-.msg-navbar .navbar-brand,
 .msg-navbar .navbar-nav>li.active>a,
-.msg-navbar .navbar-nav>li:hover>a {
-    color: #616469; 
-}
+.msg-navbar .navbar-nav>li:hover>a,
 .msg-navbar .navbar-nav>li>a:hover {
     background-color: #558EB9;
     color: #FFF;
+}
+.msg-navbar .navbar-brand {
+
 }
 .msg-navbar .navbar-toggle .icon-bar {
     background-color: #616469;
@@ -92,23 +91,6 @@ f.msg-body {
     color: #555;
     margin: 20px;
 }
-.msg-footer {
-    background: #2a3034;
-    padding: 50px 0;
-    margin-top: 30px;
-}
-.msg-footer p {
-    color: #fff;
-    font-weight: 300;
-    font-size: 24px;
-    line-height: 1em;
-    margin: 0;
-}
-.msg-footer p span {
-    font-weight: 400;
-    font-size: 14px;
-    color: #908f8f;
-}
 .glyphicon-2x{
     font-size: 20px; 
 }
@@ -126,29 +108,6 @@ f.msg-body {
 }
 .glyphicon-10x{
     font-size: 180px; 
-}
-.btn.btn-blue {
-    color: #FFF;
-    background: #00C3F7;
-    border: 2px solid #00C3F7;
-    border-radius: 0px;
-    text-shadow: 0 0 0;
-}
-.btn.btn-orange {
-    color: #FFF;
-    background: #ff8b00;
-    border: 2px solid #ff8b00;
-    border-radius: 0px;
-    text-shadow: 0 0 0;
-}
-.contact-info {
-    margin: 0;
-    list-style: none;
-}
-.contact-info li {
-    font-size: 16px;
-    padding: 10px 0 10px 50px;
-    margin-bottom: 10px;
 }
 .form-control, input[type='text'], input[type='email'], input[type='number'], input[type='password'], textarea, select {
     border: 1px solid #CCC;
@@ -177,8 +136,12 @@ label.error {
     font-weight: normal;
     color: #FF4040;
 }
-footer {
-    border-top: 1px solid #DDD;
-    margin-top: 40px;
-    padding: 10px;
+.msg-footer {
+    background: #2a3034;
+    padding: 20px 0;
+    margin-top: 30px;
+    color: #FAFAFA;
+}
+article {
+    color: #888;
 }

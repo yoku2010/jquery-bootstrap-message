@@ -7,7 +7,7 @@
         <link rel="stylesheet" type="text/css" media="all" href="css/bootstrap-theme.min.css">
         <link rel="stylesheet" type="text/css" media="all" href="css/jquery.bootstrap.message.css">
         <link rel="stylesheet" type="text/css" media="all" href="css/main.css">
-        <link rel="icon" href="img/favicon.gif" type="image/gif" sizes="16x16">
+        <link rel="icon" href="img/favicon.ico" type="image/icon" sizes="16x16">
         <script type="text/javascript" src="js/libs/jquery-1.11.1.min.js"></script>
         <script type="text/javascript" src="js/libs/bootstrap.min.js"></script>
         <script type="text/javascript" src="js/libs/jquery.bootstrap.message.js"></script>
@@ -28,12 +28,12 @@
                                         <span class="icon-bar orange"></span>
                                     </button>
                                     <a class="navbar-brand" href="#">
-                                        <span class="glyphicon glyphicon glyphicon-comment orange"></span> <span>Message</span></a>
+                                        <span class="glyphicon glyphicon-leaf"></span> <span>Message</span></a>
                                 </div>
                                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-9" nav-collapse="">
                                 <ul class="nav navbar-nav">
                                     <li class="active"><a href="index.html">Demo</a></li>
-                                    <li class="active"><a href="docs.html">Docs</a></li>
+                                    <li><a href="docs.html">Docs</a></li>
                                 </ul>
                                 </div>
                             </div>
@@ -63,9 +63,9 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
-                            <h3 class="blue"><span class="glyphicon glyphicon-paperclip"></span> Demos</h3>
+                            <h3><span class="glyphicon glyphicon-link"></span> Onload Demo</h3>
                             <article>
-                                <p class="s-desc"></p>
+                                <p>All Message will come on the page load event and behave accordingly.</p>
                             </article>
                             <div id="info_msg"></div>
                             <div id="warning_msg"></div>
@@ -73,25 +73,117 @@
                             <div id="error_msg"></div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="msg-footer">
-                <div class="container">
                     <div class="row">
-                        <div class="col-md-9">
-                            <p></p>
-                            <p>
-                                <span></span>
-                            </p>
-                        </div>
-                        <div class="col-md-3">
+                        <div class="col-md-12">
+                            <h3><span class="glyphicon glyphicon-link"></span> Event Based Demo</h3>
+                            <article>
+                                <p>Click on the buttons to get message box.</p>
+                            </article>
+                            <div id='particular_msg'></div>
+                            <table class="table table-condensed table-striped table-hover table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th colspan="2">Type of Message Box</th>
+                                        <th>Util events</th>
+                                        <th>Code</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>At particular div</td>
+                                        <td>
+                                            <button type="button" class="btn btn-sm btn-success" id="success1">Success</button>
+                                            <button type="button" class="btn btn-sm btn-info" id="info1">Info</button>
+                                            <button type="button" class="btn btn-sm btn-warning" id="warning1">Warning</button>
+                                            <button type="button" class="btn btn-sm btn-danger" id="danger1">Danger</button>
+                                        </td>
+                                        <td>
+                                            <button type="button" class="btn btn-xs btn-primary" disabled="" id="update1">Update</button>
+                                            <button type="button" class="btn btn-xs btn-primary" disabled="" id="close1">Close</button>
+                                        </td>
+                                        <td>
+                                            <button type="button" class="btn btn-xs btn-default" id="code1">Code</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Top of the page</td>
+                                        <td>
+                                            <button type="button" class="btn btn-sm btn-success" id="success2">Success</button>
+                                            <button type="button" class="btn btn-sm btn-info" id="info2">Info</button>
+                                            <button type="button" class="btn btn-sm btn-warning" id="warning2">Warning</button>
+                                            <button type="button" class="btn btn-sm btn-danger" id="danger2">Danger</button>
+                                        </td>
+                                        <td>
+                                            <button type="button" class="btn btn-xs btn-primary" disabled="" id="update2">Update</button>
+                                            <button type="button" class="btn btn-xs btn-primary" disabled="" id="close2">Close</button>
+                                        </td>
+                                        <td>
+                                            <button type="button" class="btn btn-xs btn-default" id="code2">Code</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Bottom of the page</td>
+                                        <td>
+                                            <button type="button" class="btn btn-sm btn-success" id="success3">Success</button>
+                                            <button type="button" class="btn btn-sm btn-info" id="info3">Info</button>
+                                            <button type="button" class="btn btn-sm btn-warning" id="warning3">Warning</button>
+                                            <button type="button" class="btn btn-sm btn-danger" id="danger3">Danger</button>
+                                        </td>
+                                        <td>
+                                            <button type="button" class="btn btn-xs btn-primary" disabled="" id="update3">Update</button>
+                                            <button type="button" class="btn btn-xs btn-primary" disabled="" id="close3">Close</button>
+                                        </td>
+                                        <td>
+                                            <button type="button" class="btn btn-xs btn-default" id="code3">Code</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Top left of the page</td>
+                                        <td>
+                                            <button type="button" class="btn btn-sm btn-success" id="success4">Success</button>
+                                            <button type="button" class="btn btn-sm btn-info" id="info4">Info</button>
+                                            <button type="button" class="btn btn-sm btn-warning" id="warning4">Warning</button>
+                                            <button type="button" class="btn btn-sm btn-danger" id="danger4">Danger</button>
+                                        </td>
+                                        <td>
+                                            <button type="button" class="btn btn-xs btn-primary" disabled="" id="update4">Update</button>
+                                            <button type="button" class="btn btn-xs btn-primary" disabled="" id="close4">Close</button>
+                                        </td>
+                                        <td>
+                                            <button type="button" class="btn btn-xs btn-default" id="code4">Code</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Top right of the page</td>
+                                        <td>
+                                            <button type="button" class="btn btn-sm btn-success" id="success5">Success</button>
+                                            <button type="button" class="btn btn-sm btn-info" id="info5">Info</button>
+                                            <button type="button" class="btn btn-sm btn-warning" id="warning5">Warning</button>
+                                            <button type="button" class="btn btn-sm btn-danger" id="danger5">Danger</button>
+                                        </td>
+                                        <td>
+                                            <button type="button" class="btn btn-xs btn-primary" disabled="" id="update5">Update</button>
+                                            <button type="button" class="btn btn-xs btn-primary" disabled="" id="close5">Close</button>
+                                        </td>
+                                        <td>
+                                            <button type="button" class="btn btn-xs btn-default" id="code5">Code</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
         <footer>
-            <div class="text-center small">&copy; 2014 jQuery Bootstrap Message</div>
+            <div class="msg-footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="text-center small">&copy; 2014 jQuery Bootstrap Message</div>
+                    </div>
+                </div>
+            </div>
         </footer>
     </body>
 </html>

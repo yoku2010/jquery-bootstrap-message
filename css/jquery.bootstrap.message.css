@@ -2,20 +2,23 @@
     position: relative;
     padding: 10px;
 }
-    .message a {
+    .message > a {
         position: absolute;
         top: 12px;
         right: 9px;
     }
-    .message.alert-danger a {
+    .message > p {
+        margin-right: 10px;
+    }
+    .message.alert-danger > a {
         color: #a94442;
     }
-    .message.alert-warning a {
+    .message.alert-warning > a {
         color: #8a6d3b;
     }
-    .message.alert-info a {
+    .message.alert-info > a {
         color: #31708f;
     }
-    .message.alert-success a {
+    .message.alert-success > a {
         color: #3c763d;
     }

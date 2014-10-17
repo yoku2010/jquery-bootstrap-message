@@ -47,8 +47,58 @@ $(document).ready(function() {
             }
         });
     });
+    $('#info1').click(function () {
+        message1 = $('#particular_msg').message({
+            type: 'info',
+            html: 'This is message in particular div.',
+            beforeFunc: function () {
+                $('#update1').prop('disabled', false);
+            },
+            afterFunc: function () {
+                $('#close1').prop('disabled', false);
+            },
+            onCloseFunc: function () {
+                $('#update1').prop('disabled', true);
+                $('#close1').prop('disabled', true);
+            }
+        });
+    });
+    $('#warning1').click(function () {
+        message1 = $('#particular_msg').message({
+            type: 'warning',
+            html: 'This is message in particular div.',
+            beforeFunc: function () {
+                $('#update1').prop('disabled', false);
+            },
+            afterFunc: function () {
+                $('#close1').prop('disabled', false);
+            },
+            onCloseFunc: function () {
+                $('#update1').prop('disabled', true);
+                $('#close1').prop('disabled', true);
+            }
+        });
+    });
+    $('#danger1').click(function () {
+        message1 = $('#particular_msg').message({
+            type: 'danger',
+            html: 'This is message in particular div.',
+            beforeFunc: function () {
+                $('#update1').prop('disabled', false);
+            },
+            afterFunc: function () {
+                $('#close1').prop('disabled', false);
+            },
+            onCloseFunc: function () {
+                $('#update1').prop('disabled', true);
+                $('#close1').prop('disabled', true);
+            }
+        });
+    });
     $('#close1').click(function() {
-        debugger;
         message1.close();
-    })
+    });
+    $('#update1').click(function() {
+        message1.update('Message has been updated at <strong>' + String(new Date()) + '</strong>.');
+    });
 });

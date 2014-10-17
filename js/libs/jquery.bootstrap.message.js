@@ -14,14 +14,26 @@
                 close: true,                    // show close button
                 autoHide: null,                 // define time in ms to auto hide
                 animationTime: 1000,            // animation time
+                cl: {                           // define classes
+                    messageBox: 'message',      // message box class
+                    closeBtn: 'close-btn'       // close button class
+                },
                 beforeFunc: function () {},     // function to execute before message box creation
                 afterFunc: function () {},      // function to execute after message box creation
                 onCloseFunc: function () {}     // function to execute on closing of message box
             }, settings);
-            this.each(function () {
-                console.log(new $.createMsg(this, settings));    // creating object for all elements
+            // add some util function using extand the object
+            this.extend({
+                close: function () {
+                    this.find('a.' + settings.cl.closeBtn).click();      // call close event of the message box
+                },
+                update: function (html) {
+                    this.find('div.' + settings.cl.messageBox + '>p').html(html);
+                }
             });
-            return this;
+            return this.each(function () {
+                new $.createMsg(this, settings);    // creating object for all elements
+            });
         }
     });
     $.createMsg = function (me, opt) {
@@ -32,9 +44,6 @@
                 $msgBox: null,          // to store message box object
                 $closeButton: null,     // to store close button object
                 timer: null             // to store timer object (setTimeout)
-            },
-            cl: {
-                close: 'close-message'
             },
             func: {
                 init: function () {         // initialization function
@@ -53,8 +62,6 @@
                         msgObj.func.showContainer();
                         // call afterFunc 
                         opt.afterFunc && opt.afterFunc();
-                        // bind some util functions
-                        msgObj.func.bindUtilFunction();
                     });
                     return msgObj;
                 },
@@ -70,11 +77,12 @@
                     msgObj.obj.$me.slideDown(opt.animationTime);
                 },
                 createMessageBox: function () {     // to create message box
-                    msgObj.obj.$msgBox = $('<div></div>').addClass('message alert').addClass('alert-' + opt.type).attr('role', 'alert').html(opt.html);
+                    msgObj.obj.$msgBox = $('<div></div>').addClass(opt.cl.messageBox).addClass('alert alert-' + opt.type).attr('role', 'alert');
+                    $('<p></p>').html(opt.html).appendTo(msgObj.obj.$msgBox);
                 },
                 createCloseButton: function () {    // to add close button
                     if (opt.close) {
-                        msgObj.obj.$closeButton = $('<a></a>').attr('href', '#').addClass(msgObj.cl.close);
+                        msgObj.obj.$closeButton = $('<a></a>').attr('href', '#').addClass(opt.cl.closeBtn);
                         $('<span></span>').addClass('glyphicon glyphicon-remove').appendTo(msgObj.obj.$closeButton);
                         msgObj.obj.$closeButton.click(function (e) {
                             msgObj.evnt.closeMsgBox(e, $(this));        // close button event
@@ -88,11 +96,6 @@
                             msgObj.func.emptyContainer(true, true);
                         }, opt.autoHide);
                     }
-                },
-                bindUtilFunction: function () {
-                    msgObj.obj.$me.close = function() {
-                        msgObj.obj.$me.find('a.'+ msgObj.cl.close).click();
-                    } 
                 }
             },
             evnt: {
@@ -103,6 +106,6 @@
             }
         };
         // calling main function
-        return msgObj.func.init();
+        msgObj.func.init();
     };
 })(jQuery);

@@ -11,12 +11,15 @@
             settings = jQuery.extend({
                 type: 'info',                   // info | warning | danger | success
                 html: 'Enter Your Message',     // html message
+                position: null,                 // top-left | top-right | bottom-left | bottom-right
+                width: null,                    // define width
                 close: true,                    // show close button
                 autoHide: null,                 // define time in ms to auto hide
                 animationTime: 1000,            // animation time
                 cl: {                           // define classes
                     messageBox: 'message',      // message box class
-                    closeBtn: 'close-btn'       // close button class
+                    closeBtn: 'close-btn',      // close button class
+                    fixDiv: 'fix-msg'           // Fixed Div Class
                 },
                 beforeFunc: function () {},     // function to execute before message box creation
                 afterFunc: function () {},      // function to execute after message box creation
@@ -31,15 +34,23 @@
                     this.find('div.' + settings.cl.messageBox + '>p').html(html);
                 }
             });
-            return this.each(function () {
-                new $.createMsg(this, settings);    // creating object for all elements
-            });
+            if (this.length > 0) {
+                this.each(function () {
+                    new $.createMsg(this, settings);    // creating object for all elements
+                });
+                return this;
+            }
+            else {
+                settings.isRemove = true;
+                return $('<div></div>').addClass(settings.cl.fixDiv).appendTo('body').message(settings);
+            }
         }
     });
     $.createMsg = function (me, opt) {
         var msgObj = {
             version: '0.1',
             obj: {
+                $win: $(window),        // to store windows object
                 $me: $(me),             // to store container object
                 $msgBox: null,          // to store message box object
                 $closeButton: null,     // to store close button object
@@ -48,7 +59,7 @@
             func: {
                 init: function () {         // initialization function
                     // make container empty
-                    msgObj.func.emptyContainer(false, false, function () {
+                    msgObj.func.emptyContainer(false, false, false, function () {
                         // call beforeFunc
                         opt.beforeFunc && opt.beforeFunc();
                         // create Message
@@ -60,17 +71,22 @@
                         msgObj.obj.$msgBox.appendTo(msgObj.obj.$me);
                         // to show the message box
                         msgObj.func.showContainer();
+                        // to manage position of the message box
+                        msgObj.func.fixedPosition();
+                        // bind window resize event
+                        msgObj.func.bindWindowEvents();
                         // call afterFunc 
                         opt.afterFunc && opt.afterFunc();
                     });
                     return msgObj;
                 },
-                emptyContainer: function (delay, isClose, callback) {
+                emptyContainer: function (delay, isClose, isRemove, callback) {
                     msgObj.obj.$me.slideUp(delay && opt.animationTime || 0,function() {
                         msgObj.obj.timer && clearTimeout(msgObj.obj.timer);
                         msgObj.obj.$me.empty(); // to empty the message container
                         callback && callback(); // to call callback
                         isClose && opt.onCloseFunc && opt.onCloseFunc();    // to call onCloseFunc
+                        isRemove && msgObj.obj.$me.remove();
                     });
                 },
                 showContainer: function () {
@@ -93,15 +109,73 @@
                 autoHideTimer: function () {       // auto close timer
                     if (void 0 != opt.autoHide) {
                         msgObj.obj.timer = setTimeout(function () {
-                            msgObj.func.emptyContainer(true, true);
+                            msgObj.func.emptyContainer(true, true, opt.isRemove);
                         }, opt.autoHide);
                     }
+                },
+                fixedPosition: function () {
+                    var windowWidth = msgObj.obj.$win.width();
+                    if (void 0 != opt.position) {
+                        if (void 0 == opt.width) {
+                            opt.width = 300;
+                        }
+                        if (!msgObj.obj.$me.hasClass(opt.cl.fixDiv)) {
+                            msgObj.obj.$me.addClass(opt.cl.fixDiv);
+                        }
+                        if ('top' == opt.position) {
+                            msgObj.obj.$me.css({
+                                top: '0px',
+                                left: '0px',
+                                right: '0px'
+                            });
+                        }
+                        else if ('top-left' == opt.position) {
+                            msgObj.obj.$me.css({
+                                top: '0px',
+                                left: '0px',
+                                right: (windowWidth - opt.width) + 'px'
+                            });
+                        }
+                        else if ('top-right' == opt.position) {
+                            msgObj.obj.$me.css({
+                                top: '0px',
+                                left: (windowWidth - opt.width) + 'px',
+                                right: '0px'
+                            });
+                        }
+                        else if ('bottom' == opt.position) {
+                            msgObj.obj.$me.css({
+                                bottom: '0px',
+                                left: '0px',
+                                right: '0px'
+                            });
+                        }
+                        else if ('bottom-left' == opt.position) {
+                            msgObj.obj.$me.css({
+                                bottom: '0px',
+                                left: '0px',
+                                right: (windowWidth - opt.width) + 'px'
+                            });
+                        }
+                        else if ('bottom-right' == opt.position) {
+                            msgObj.obj.$me.css({
+                                bottom: '0px',
+                                left: (windowWidth - opt.width) + 'px',
+                                right: '0px'
+                            });
+                        }
+                    }
+                },
+                bindWindowEvents: function () {
+                    msgObj.obj.$win.resize(function () {
+                        msgObj.func.fixedPosition();
+                    });
                 }
             },
             evnt: {
                 closeMsgBox: function (e, $me) {    // close message box event
                     e.preventDefault();
-                    msgObj.func.emptyContainer(true, true);
+                    msgObj.func.emptyContainer(true, true, opt.isRemove);
                 }
             }
         };

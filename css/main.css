@@ -24,9 +24,6 @@ body {
     background-color: #558EB9;
     color: #FFF;
 }
-.msg-navbar .navbar-brand {
-
-}
 .msg-navbar .navbar-toggle .icon-bar {
     background-color: #616469;
 }
@@ -144,4 +141,7 @@ label.error {
 }
 article {
     color: #888;
+}
+pre {
+    margin:0;
 }

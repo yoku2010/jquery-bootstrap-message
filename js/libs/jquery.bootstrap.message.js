@@ -12,7 +12,7 @@
                 type: 'info',                   // info | warning | danger | success
                 html: 'Enter Your Message',     // html message
                 icon: false,                    // true - will show message icon | false - no icon
-                position: null,                 // top-left | top-right | bottom-left | bottom-right
+                position: null,                 // top | top-left | top-right | bottom | bottom-left | bottom-right
                 width: null,                    // define width
                 close: true,                    // show close button
                 autoHide: null,                 // define time in ms to auto hide
@@ -49,7 +49,7 @@
     });
     $.createMsg = function (me, opt) {
         var msgObj = {
-            version: '0.1',
+            version: '1.0',
             obj: {
                 $win: $(window),        // to store windows object
                 $me: $(me),             // to store container object

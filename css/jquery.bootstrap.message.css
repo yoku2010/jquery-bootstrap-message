@@ -2,6 +2,9 @@
     position: relative;
     padding: 10px;
 }
+    .message > span {
+        padding-right: 5px;
+    }
     .message > a {
         position: absolute;
         top: 12px;
@@ -9,6 +12,7 @@
     }
     .message > p {
         margin-right: 15px;
+        display: inline;
     }
     .message.alert-danger > a {
         color: #a94442;

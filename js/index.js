@@ -8,21 +8,25 @@ $(document).ready(function() {
     $('#info_msg').message({
         type: 'info',
         html: '<strong>Oh...! </strong> it\'s an information message.',
+        icon: true,
         close: false
     });
     $('#warning_msg').message({
         type:'warning',
-        html: 'This is warning message.'
+        html: 'This is warning message.',
+        icon: true
     });
     $('#success_msg').message({
         type: 'success',
         html: '<strong>Well Done! </strong> You did great job.',
+        icon: true,
         close: false,
         autoHide: 4000
     });
     $('#error_msg').message({
         type: 'danger',
         html: '<strong>Damn </strong> it\'s an error',
+        icon: true,
         close: true,
         autoHide: 10000
     });
@@ -34,7 +38,6 @@ $(document).ready(function() {
     $('#success1').click(function () {
         message1 = $('#particular_msg').message({
             type: 'success',
-            position: 'top',
             html: 'This is message in particular div.',
             beforeFunc: function () {
                 $update1.prop('disabled', false);
@@ -112,6 +115,7 @@ $(document).ready(function() {
             type: 'success',
             html: 'This is message in particular div.',
             position: 'top',
+            icon: true,
             beforeFunc: function () {
                 $update2.prop('disabled', false);
             },
@@ -129,6 +133,7 @@ $(document).ready(function() {
             type: 'info',
             html: 'This is message in particular div.',
             position: 'top',
+            icon: true,
             beforeFunc: function () {
                 $update2.prop('disabled', false);
             },
@@ -146,6 +151,7 @@ $(document).ready(function() {
             type: 'warning',
             html: 'This is message in particular div.',
             position: 'top',
+            icon: true,
             beforeFunc: function () {
                 $update2.prop('disabled', false);
             },
@@ -163,6 +169,7 @@ $(document).ready(function() {
             type: 'danger',
             html: 'This is message in particular div.',
             position: 'top',
+            icon: true,
             beforeFunc: function () {
                 $update2.prop('disabled', false);
             },
@@ -183,7 +190,7 @@ $(document).ready(function() {
     });
 
     /*
-     * @summary: Message at top left of the page
+     * @summary: Message at top-left of the page
      */
     var message3, $update3 = $('#update3'), $close3 = $('#close3');
     $('#success3').click(function () {
@@ -262,7 +269,7 @@ $(document).ready(function() {
     });
 
     /*
-     * @summary: Message at top right of the page
+     * @summary: Message at top-right of the page
      */
     var message4, $update4 = $('#update4'), $close4 = $('#close4');
     $('#success4').click(function () {
@@ -499,7 +506,7 @@ $(document).ready(function() {
     });
 
     /*
-     * @summary: Message at bottom right of the page
+     * @summary: Message at bottom-right of the page
      */
     var message7, $update7 = $('#update7'), $close7 = $('#close7');
     $('#success7').click(function () {

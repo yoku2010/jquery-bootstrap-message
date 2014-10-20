@@ -11,6 +11,7 @@
             settings = jQuery.extend({
                 type: 'info',                   // info | warning | danger | success
                 html: 'Enter Your Message',     // html message
+                icon: false,                    // true - will show message icon | false - no icon
                 position: null,                 // top-left | top-right | bottom-left | bottom-right
                 width: null,                    // define width
                 close: true,                    // show close button
@@ -56,6 +57,12 @@
                 $closeButton: null,     // to store close button object
                 timer: null             // to store timer object (setTimeout)
             },
+            iconClass: {
+                'success': 'glyphicon glyphicon-ok-sign',
+                'info': 'glyphicon glyphicon-info-sign',
+                'warning': 'glyphicon glyphicon-exclamation-sign',
+                'danger': 'glyphicon glyphicon-remove-sign'
+            },
             func: {
                 init: function () {         // initialization function
                     // make container empty
@@ -64,6 +71,8 @@
                         opt.beforeFunc && opt.beforeFunc();
                         // create Message
                         msgObj.func.createMessageBox();
+                        // add icon in message box
+                        msgObj.func.createIcon();
                         // add close button
                         msgObj.func.createCloseButton();
                         // add auto close timer
@@ -95,6 +104,9 @@
                 createMessageBox: function () {     // to create message box
                     msgObj.obj.$msgBox = $('<div></div>').addClass(opt.cl.messageBox).addClass('alert alert-' + opt.type).attr('role', 'alert');
                     $('<p></p>').html(opt.html).appendTo(msgObj.obj.$msgBox);
+                },
+                createIcon: function () {
+                    opt.icon && $('<span></span>').addClass(msgObj.iconClass[opt.type]).prependTo(msgObj.obj.$msgBox);
                 },
                 createCloseButton: function () {    // to add close button
                     if (opt.close) {

@@ -1,79 +1,199 @@
 <!DOCTYPE html>
-<html>
-
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="description" content="Jquery-bootstrap-message : Dynamic message using jQuery and bootstrap.">
-
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
-    <title>Jquery-bootstrap-message</title>
-  </head>
-
-  <body>
-
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/yoku2010/jquery-bootstrap-message">View on GitHub</a>
-
-          <h1 id="project_title">Jquery-bootstrap-message</h1>
-          <h2 id="project_tagline">Dynamic message using jQuery and bootstrap.</h2>
-
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/yoku2010/jquery-bootstrap-message/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/yoku2010/jquery-bootstrap-message/tarball/master">Download this project as a tar.gz file</a>
-            </section>
+<html lang="en">
+    <head>
+        <title>jQuery Bootstrap Message</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" media="all" href="css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" media="all" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" type="text/css" media="all" href="css/jquery.bootstrap.message.css">
+        <link rel="stylesheet" type="text/css" media="all" href="css/main.css">
+        <link rel="icon" href="img/favicon.ico" type="image/icon" sizes="16x16">
+        <script type="text/javascript" src="js/libs/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript" src="js/libs/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/libs/jquery.bootstrap.message.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+    </head>
+    <body>
+        <header class="msg-navbar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <nav class="navbar navbar-static-top" role="navigation">
+                            <div class="container-fluid">
+                                <div class="navbar-header">
+                                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-9">
+                                        <span class="sr-only">Toggle</span>
+                                        <span class="icon-bar orange"></span>
+                                        <span class="icon-bar orange"></span>
+                                        <span class="icon-bar orange"></span>
+                                    </button>
+                                    <a class="navbar-brand" href="#">
+                                        <span class="glyphicon glyphicon-leaf"></span> <span>Message</span></a>
+                                </div>
+                                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-9" nav-collapse="">
+                                <ul class="nav navbar-nav">
+                                    <li class="active"><a href="index.html">Demo</a></li>
+                                    <li><a href="docs.html">Docs</a></li>
+                                </ul>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
         </header>
-    </div>
-
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
-
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
-
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
-
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
-
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
-
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
-
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
-
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
-    </div>
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Jquery-bootstrap-message maintained by <a href="https://github.com/yoku2010">yoku2010</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
-
-    
-
-  </body>
+        <section>
+            <div class="msg-header">
+                 <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h1>jQuery Bootstrap Message</h1>
+                                </div>
+                                <div class="col-md-12">
+                                    <p class="sub-header">You can create dynamic message using jQuery and bootstrap.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="msg-container">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3><span class="glyphicon glyphicon-link"></span> Onload Demo</h3>
+                            <article>
+                                <p>All Message will come on the page load event and behave accordingly.</p>
+                            </article>
+                            <div id="info_msg"></div>
+                            <div id="warning_msg"></div>
+                            <div id="success_msg"></div>
+                            <div id="error_msg"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3><span class="glyphicon glyphicon-link"></span> Event Based Demo</h3>
+                            <article>
+                                <p>Click on the buttons to get message box.</p>
+                            </article>
+                            <div id='particular_msg'></div>
+                            <table class="table table-condensed table-striped table-hover table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th colspan="2">Type of Message Box</th>
+                                        <th>Util events</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>At particular div</td>
+                                        <td>
+                                            <button type="button" class="btn btn-sm btn-success" id="success1">Success</button>
+                                            <button type="button" class="btn btn-sm btn-info" id="info1">Info</button>
+                                            <button type="button" class="btn btn-sm btn-warning" id="warning1">Warning</button>
+                                            <button type="button" class="btn btn-sm btn-danger" id="danger1">Danger</button>
+                                        </td>
+                                        <td>
+                                            <button type="button" class="btn btn-xs btn-primary" disabled="" id="update1">Update</button>
+                                            <button type="button" class="btn btn-xs btn-primary" disabled="" id="close1">Close</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Top of the page</td>
+                                        <td>
+                                            <button type="button" class="btn btn-sm btn-success" id="success2">Success</button>
+                                            <button type="button" class="btn btn-sm btn-info" id="info2">Info</button>
+                                            <button type="button" class="btn btn-sm btn-warning" id="warning2">Warning</button>
+                                            <button type="button" class="btn btn-sm btn-danger" id="danger2">Danger</button>
+                                        </td>
+                                        <td>
+                                            <button type="button" class="btn btn-xs btn-primary" disabled="" id="update2">Update</button>
+                                            <button type="button" class="btn btn-xs btn-primary" disabled="" id="close2">Close</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Top Left of the page</td>
+                                        <td>
+                                            <button type="button" class="btn btn-sm btn-success" id="success3">Success</button>
+                                            <button type="button" class="btn btn-sm btn-info" id="info3">Info</button>
+                                            <button type="button" class="btn btn-sm btn-warning" id="warning3">Warning</button>
+                                            <button type="button" class="btn btn-sm btn-danger" id="danger3">Danger</button>
+                                        </td>
+                                        <td>
+                                            <button type="button" class="btn btn-xs btn-primary" disabled="" id="update3">Update</button>
+                                            <button type="button" class="btn btn-xs btn-primary" disabled="" id="close3">Close</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Top Right of the page</td>
+                                        <td>
+                                            <button type="button" class="btn btn-sm btn-success" id="success4">Success</button>
+                                            <button type="button" class="btn btn-sm btn-info" id="info4">Info</button>
+                                            <button type="button" class="btn btn-sm btn-warning" id="warning4">Warning</button>
+                                            <button type="button" class="btn btn-sm btn-danger" id="danger4">Danger</button>
+                                        </td>
+                                        <td>
+                                            <button type="button" class="btn btn-xs btn-primary" disabled="" id="update4">Update</button>
+                                            <button type="button" class="btn btn-xs btn-primary" disabled="" id="close4">Close</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Bottom of the page</td>
+                                        <td>
+                                            <button type="button" class="btn btn-sm btn-success" id="success5">Success</button>
+                                            <button type="button" class="btn btn-sm btn-info" id="info5">Info</button>
+                                            <button type="button" class="btn btn-sm btn-warning" id="warning5">Warning</button>
+                                            <button type="button" class="btn btn-sm btn-danger" id="danger5">Danger</button>
+                                        </td>
+                                        <td>
+                                            <button type="button" class="btn btn-xs btn-primary" disabled="" id="update5">Update</button>
+                                            <button type="button" class="btn btn-xs btn-primary" disabled="" id="close5">Close</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Bottom Left of the page</td>
+                                        <td>
+                                            <button type="button" class="btn btn-sm btn-success" id="success6">Success</button>
+                                            <button type="button" class="btn btn-sm btn-info" id="info6">Info</button>
+                                            <button type="button" class="btn btn-sm btn-warning" id="warning6">Warning</button>
+                                            <button type="button" class="btn btn-sm btn-danger" id="danger6">Danger</button>
+                                        </td>
+                                        <td>
+                                            <button type="button" class="btn btn-xs btn-primary" disabled="" id="update6">Update</button>
+                                            <button type="button" class="btn btn-xs btn-primary" disabled="" id="close6">Close</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Bottom Right of the page</td>
+                                        <td>
+                                            <button type="button" class="btn btn-sm btn-success" id="success7">Success</button>
+                                            <button type="button" class="btn btn-sm btn-info" id="info7">Info</button>
+                                            <button type="button" class="btn btn-sm btn-warning" id="warning7">Warning</button>
+                                            <button type="button" class="btn btn-sm btn-danger" id="danger7">Danger</button>
+                                        </td>
+                                        <td>
+                                            <button type="button" class="btn btn-xs btn-primary" disabled="" id="update7">Update</button>
+                                            <button type="button" class="btn btn-xs btn-primary" disabled="" id="close7">Close</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div class="msg-footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="text-center small">&copy; 2014 jQuery Bootstrap Message</div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </body>
 </html>

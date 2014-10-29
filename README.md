@@ -36,7 +36,7 @@ Documentation
 
 License
 -------
-No License
+MIT License
 
 
 **Free Software!!!**
